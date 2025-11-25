@@ -1,65 +1,118 @@
-import Image from "next/image";
+import popular from "@/lib/popular";
+import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const products = await popular();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    // hero section
+    <div>
+      <section className="hero bg-base-200 py-16">
+        <div className="hero-content flex-col lg:flex-row-reverse">
+          <img
+            src="https://i.ibb.co.com/0y1p7f98/Screenshot-2025-11-24-142657.png"
+            className="max-w-sm rounded-lg shadow-2xl"
+          />
+          <div>
+            <h1 className="text-5xl font-bold">Shop Your Favorite Products</h1>
+            <p className="py-6 text-lg">
+              Discover top-quality items at the best prices. Fast delivery,
+              secure payment, and a smooth shopping experience.
+            </p>
+            <Link
+              href="http://localhost:3000/products"
+              className="btn bg-yellow-600 text-white"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              Explore Products
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-5 max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us?</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="card bg-base-200 shadow-md hover:shadow-xl transition">
+            <div className="card-body text-center">
+              <h3 className="text-xl font-semibold">Fast Delivery</h3>
+              <p>Get your products delivered to your doorstep quickly.</p>
+            </div>
+          </div>
+
+          <div className="card bg-base-200 shadow-md hover:shadow-xl transition">
+            <div className="card-body text-center">
+              <h3 className="text-xl font-semibold">Quality Products</h3>
+              <p>We offer premium items with verified authenticity.</p>
+            </div>
+          </div>
+
+          <div className="card bg-base-200 shadow-md hover:shadow-xl transition">
+            <div className="card-body text-center">
+              <h3 className="text-xl font-semibold">Secure Payment</h3>
+              <p>Your transactions are safe with our encrypted system.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-5 bg-base-200">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          Popular Products
+        </h2>
+
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {products?.map((product) => (
+            <div
+              key={product._id}
+              className="card bg-base-100 shadow-md hover:shadow-xl hover:-translate-y-1 transition"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              <figure>
+                <img
+                  src={product.image}
+                  alt="Product"
+                  className="h-48 w-full object-cover"
+                />
+              </figure>
+
+              <div className="card-body">
+                <h2 className="card-title text-secondary">{product.title}</h2>
+                <p className="text-sm text-gray-500">{product.description}.</p>
+                <p className="font-semibold text-yellow-500">
+                  Price: ${product.price}
+                </p>
+
+                <div className="card-actions justify-end">
+                  <Link
+                    href={`${NEXT_PUBLIC_API_URL}/products/${product._id}`}
+                    className="btn btn-outline btn-warning"
+                  >
+                    Details
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="px-5 py-20 max-w-6xl mx-auto">
+        <div className="hero rounded-xl bg-gradient-to-r from-yellow-300 to-secondary text-white py-16">
+          <div className="hero-content text-center">
+            <div>
+              <h2 className="text-4xl font-bold mb-4">
+                Get 20% Off On Your First Order!
+              </h2>
+              <p className="mb-6">Limited time offer — grab it now.</p>
+              <Link
+                href="http://localhost:3000/products"
+                className="btn btn-outline text-white border-white hover:bg-white hover:text-primary"
+              >
+                Shop Now
+              </Link>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
     </div>
   );
 }
