@@ -9,7 +9,7 @@ export default function ManageProducts() {
   // Load products
   useEffect(() => {
     const fetchProducts = async () => {
-      const res = await fetch(`${NEXT_PUBLIC_API_URL}/products`);
+      const res = await fetch(`https://next-server-nu.vercel.app/products`);
       const data = await res.json();
       setProducts(data);
     };
@@ -32,9 +32,12 @@ export default function ManageProducts() {
     if (!result.isConfirmed) return;
 
     try {
-      const res = await fetch(`${NEXT_PUBLIC_API_URL}/products/${id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `https://next-server-nu.vercel.app/products/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       const data = await res.json();
 
       if (data.deletedCount > 0) {

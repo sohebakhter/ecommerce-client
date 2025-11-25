@@ -21,7 +21,7 @@ export default function AddProduct() {
       image,
     };
 
-    const res = await fetch(`${NEXT_PUBLIC_API_URL}/products`, {
+    const res = await fetch(`https://next-server-nu.vercel.app/products`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(product),

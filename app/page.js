@@ -83,7 +83,7 @@ export default async function Home() {
 
                 <div className="card-actions justify-end">
                   <Link
-                    href={`${NEXT_PUBLIC_API_URL}/products/${product._id}`}
+                    href={`https://next-server-nu.vercel.app/products/${product._id}`}
                     className="btn btn-outline btn-warning"
                   >
                     Details
