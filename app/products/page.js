@@ -56,7 +56,7 @@ export default async function ProductsPage() {
 
               {/* Description (ellipsis) */}
               <p className="text-sm text-gray-500 line-clamp-2">
-                {n.description}
+                {n.shortDesc}
               </p>
 
               {/* Price / Meta */}

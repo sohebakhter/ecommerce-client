@@ -27,10 +27,7 @@ export default async function Home() {
               Discover top-quality items at the best prices. Fast delivery,
               secure payment, and a smooth shopping experience.
             </p>
-            <Link
-              href="/products"
-              className="btn bg-yellow-600 text-white"
-            >
+            <Link href="/products" className="btn bg-yellow-600 text-white">
               Explore Products
             </Link>
           </div>
@@ -84,14 +81,14 @@ export default async function Home() {
 
               <div className="card-body">
                 <h2 className="card-title text-secondary">{product.title}</h2>
-                <p className="text-sm text-gray-500">{product.description}.</p>
+                <p className="text-sm text-gray-500">{product.shortDesc}.</p>
                 <p className="font-semibold text-yellow-500">
                   Price: ${product.price}
                 </p>
 
                 <div className="card-actions justify-end">
                   <Link
-                    href={`https://ecommerce-client-jet-tau.vercel.app/products/${product._id}`}
+                    href={`/products/${product._id}`}
                     className="btn btn-outline btn-warning"
                   >
                     Details
@@ -112,7 +109,7 @@ export default async function Home() {
               </h2>
               <p className="mb-6">Limited time offer — grab it now.</p>
               <Link
-                href="https://ecommerce-client-jet-tau.vercel.app/products"
+                href="/products"
                 className="btn btn-outline text-white border-white hover:bg-white hover:text-primary"
               >
                 Shop Now

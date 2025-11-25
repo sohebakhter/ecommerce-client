@@ -25,22 +25,22 @@ export default async function ItemDetails({ params }) {
 
       {/* Meta Info */}
       <div className="flex flex-wrap gap-4 mt-3 text-sm text-gray-600">
-        <span className="bg-gray-100 px-3 py-1 rounded-lg">
+        <span className="bg-gray-100 px-3 py-1 rounded-lg font-bold">
           Price: <span className="font-medium">{product.price}</span>
         </span>
 
-        <span className="bg-gray-100 px-3 py-1 rounded-lg">
+        <span className="bg-gray-100 px-3 py-1 rounded-lg font-bold">
           Date: <span className="font-medium">{product.date}</span>
         </span>
 
-        <span className="bg-gray-100 px-3 py-1 rounded-lg">
+        <span className="bg-gray-100 px-3 py-1 rounded-lg font-bold">
           Priority: <span className="font-medium">{product.priority}</span>
         </span>
       </div>
 
       {/* Full Description */}
       <p className="mt-5 text-gray-700 leading-relaxed">
-        {product.description}
+        <span className="font-bold">Full Description:</span>{product.fullDesc}
       </p>
     </div>
   );
