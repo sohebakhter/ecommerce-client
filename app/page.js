@@ -17,10 +17,7 @@ export default async function Home() {
             alt="photo"
             className="max-w-sm rounded-lg shadow-2xl"
           ></Image>
-          {/* <img
-            src="https://i.ibb.co.com/0y1p7f98/Screenshot-2025-11-24-142657.png"
-            className="max-w-sm rounded-lg shadow-2xl"
-          /> */}
+         
           <div>
             <h1 className="text-5xl font-bold">Shop Your Favorite Products</h1>
             <p className="py-6 text-lg">

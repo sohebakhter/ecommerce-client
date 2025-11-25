@@ -43,7 +43,7 @@ export default function ProductsPage() {
           className="input input-bordered w-full md:w-1/2"
         />
 
-        {/* Category Filter (UI only) */}
+        {/* Category Filter  */}
         <select className="select select-bordered w-full md:w-48">
           <option disabled={true}>Sort Here</option>
           <option>Low--High</option>
@@ -51,7 +51,6 @@ export default function ProductsPage() {
         </select>
       </div>
 
-      {/* ========== PRODUCTS GRID ========== */}
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
         {filterSearche?.map((n) => (
           <div
@@ -68,18 +67,14 @@ export default function ProductsPage() {
             </figure>
 
             <div className="card-body">
-              {/* Title */}
               <h2 className="card-title text-secondary">{n.title}</h2>
 
-              {/* Description (ellipsis) */}
               <p className="text-sm text-gray-500 line-clamp-2">
                 {n.shortDesc}
               </p>
 
-              {/* Price / Meta */}
               <p className="font-semibold text-yellow-500">Price: ${n.price}</p>
 
-              {/* Details Button */}
               <div className="card-actions justify-end">
                 <Link
                   href={`/products/${n._id}`}
