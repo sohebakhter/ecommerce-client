@@ -28,7 +28,7 @@ export default async function Home() {
               secure payment, and a smooth shopping experience.
             </p>
             <Link
-              href="https://next-server-nu.vercel.app/products"
+              href="/products"
               className="btn bg-yellow-600 text-white"
             >
               Explore Products
