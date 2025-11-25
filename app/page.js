@@ -14,7 +14,7 @@ export default async function Home() {
             className="max-w-sm rounded-lg shadow-2xl"
           />
           <div>
-            <h1 className="text-5xl font-bold"> Favorite Products</h1>
+            <h1 className="text-5xl font-bold">Shop Your Favorite Products</h1>
             <p className="py-6 text-lg">
               Discover top-quality items at the best prices. Fast delivery,
               secure payment, and a smooth shopping experience.
