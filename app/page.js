@@ -91,7 +91,7 @@ export default async function Home() {
 
                 <div className="card-actions justify-end">
                   <Link
-                    href={`/products/${product._id}`}
+                    href={`https://ecommerce-client-jet-tau.vercel.app/products/${product._id}`}
                     className="btn btn-outline btn-warning"
                   >
                     Details
@@ -112,7 +112,7 @@ export default async function Home() {
               </h2>
               <p className="mb-6">Limited time offer — grab it now.</p>
               <Link
-                href="/products"
+                href="https://ecommerce-client-jet-tau.vercel.app/products"
                 className="btn btn-outline text-white border-white hover:bg-white hover:text-primary"
               >
                 Shop Now
