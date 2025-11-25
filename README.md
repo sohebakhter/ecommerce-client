@@ -60,7 +60,7 @@ Client:
 npm run dev
 
 
-Visit http://localhost:3000
+Visit https://next-server-nu.vercel.app
  to view the app.
 
 Route Summary

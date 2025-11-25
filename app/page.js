@@ -1,4 +1,5 @@
 import popular from "@/lib/popular";
+import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home() {
@@ -9,10 +10,17 @@ export default async function Home() {
     <div>
       <section className="hero bg-base-200 py-16">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img
+          <Image
+            src="https://i.ibb.co.com/0y1p7f98/Screenshot-2025-11-24-142657.png"
+            height={500}
+            width={500}
+            alt="photo"
+            className="max-w-sm rounded-lg shadow-2xl"
+          ></Image>
+          {/* <img
             src="https://i.ibb.co.com/0y1p7f98/Screenshot-2025-11-24-142657.png"
             className="max-w-sm rounded-lg shadow-2xl"
-          />
+          /> */}
           <div>
             <h1 className="text-5xl font-bold">Shop Your Favorite Products</h1>
             <p className="py-6 text-lg">
@@ -20,7 +28,7 @@ export default async function Home() {
               secure payment, and a smooth shopping experience.
             </p>
             <Link
-              href="http://localhost:3000/products"
+              href="https://next-server-nu.vercel.app/products"
               className="btn bg-yellow-600 text-white"
             >
               Explore Products
@@ -104,7 +112,7 @@ export default async function Home() {
               </h2>
               <p className="mb-6">Limited time offer — grab it now.</p>
               <Link
-                href="http://localhost:3000/products"
+                href="https://next-server-nu.vercel.app/products"
                 className="btn btn-outline text-white border-white hover:bg-white hover:text-primary"
               >
                 Shop Now
