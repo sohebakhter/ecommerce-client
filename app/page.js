@@ -91,7 +91,7 @@ export default async function Home() {
 
                 <div className="card-actions justify-end">
                   <Link
-                    href={`https://next-server-nu.vercel.app/products/${product._id}`}
+                    href={`/products/${product._id}`}
                     className="btn btn-outline btn-warning"
                   >
                     Details
@@ -112,7 +112,7 @@ export default async function Home() {
               </h2>
               <p className="mb-6">Limited time offer — grab it now.</p>
               <Link
-                href="https://next-server-nu.vercel.app/products"
+                href="/products"
                 className="btn btn-outline text-white border-white hover:bg-white hover:text-primary"
               >
                 Shop Now
