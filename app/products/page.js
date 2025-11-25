@@ -36,7 +36,7 @@ export default async function ProductsPage() {
 
       {/* ========== PRODUCTS GRID ========== */}
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
-        {products.map((n) => (
+        {products?.map((n) => (
           <div
             key={n._id}
             className="card bg-base-100 shadow-md hover:shadow-xl hover:-translate-y-1 transition"
